@@ -2,7 +2,7 @@
 
 #### (1) State of JS 2025
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 #### (2) Express를 사용하는 이유
 
