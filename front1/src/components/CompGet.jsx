@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { getFetchData } from "../util/fetchDatas.js";
+import { getFetchData } from "../utill/fetchDatas.js";
 
 export default function CompGet() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = "http://localhost:9000/api/get";
-      const response = await fetch(url, { method: "GET" });
-      const jsonData = await response.json();
+      const jsonData = await getFetchData(`/api/get`);
       setList(jsonData.fruits);
     };
     fetchData();
