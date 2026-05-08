@@ -1,18 +1,8 @@
-import express from "express";
+import express from 'express';
+import * as controller from '../controller/footer.js';
 
 const router = express.Router();
 
-router.get("/footer", (req, res, next) => {
-  const footer = {
-    description:
-      "Junior Software Engineer Judy's Portfolio - All right reserved",
-    list: [
-      { href: "#", icon: "github" },
-      { href: "#", icon: "linkedin" },
-    ],
-  };
-
-  res.json({ result: footer });
-});
+router.get('/', controller.getFooter);
 
 export default router;

@@ -1,8 +1,19 @@
+import { useState, useEffect } from 'react';
+import { getFetchData } from '../util/fetch.js';
 import { Title, SubTitle } from './commons/Titles.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-export default function Footer({ data }) {
+export default function Footer() {
+    const [data, setData] = useState({}); 
+    useEffect(()=>{
+        const fetchData = async() => {
+            const jsonData = await getFetchData("/footer");
+            setData(jsonData.result);
+        }
+        fetchData();
+    }, []);
+    
     return (
         <footer id="contact" className="footer">
             <Title title="Let's Talk" />
